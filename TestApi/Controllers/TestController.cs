@@ -17,6 +17,12 @@ public class TestController : ControllerBase
     {
         return Ok(r);
     }
+
+    [HttpPost("file")]
+    public IActionResult Upload(IFormFile file)
+    {
+        return Ok(new { file.Name } );
+    }
 }
 
 public class RegisterRequest
